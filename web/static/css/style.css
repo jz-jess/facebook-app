@@ -1,0 +1,27 @@
+img {
+      border: 3px solid #282c34;
+      position: relative;
+      left: 140px;
+    }
+    .container-fluid {
+      height: 100vh;
+      background-color: #282c34;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container-fluid > div {
+      width: 50%;
+    }
+    .card {
+        width: 100%;
+    }
+    .social-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .btn a, .btn a:hover {
+      color: white;
+      text-decoration: none ;
+    }

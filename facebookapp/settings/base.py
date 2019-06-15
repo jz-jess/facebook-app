@@ -92,8 +92,8 @@ LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_URL = 'logout'
 LOGOUT_REDIRECT_URL = 'login'
-SOCIAL_AUTH_FACEBOOK_KEY = '831894683842856'
-SOCIAL_AUTH_FACEBOOK_SECRET = '8a9ab8dea03ccac3d3c5d8fdd8a5959a'
+SOCIAL_AUTH_FACEBOOK_KEY = ''
+SOCIAL_AUTH_FACEBOOK_SECRET = ''
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email', 'user_link']
 SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
   'fields': 'id, name, email, picture.type(large)'
@@ -117,7 +117,7 @@ SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.social_auth.load_extra_data',
     'social_core.pipeline.user.user_details',
     'core.pipeline.exchange_token',
-    'core.pipeline.save_profile'
+    'core.pipeline.create_or_update_profile'
 )
 
 AUTHENTICATION_BACKENDS = [

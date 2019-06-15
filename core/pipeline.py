@@ -1,7 +1,7 @@
 from core.models import Profile
 
 
-def save_profile(strategy, backend, uid, response, details, user,  *args, **kwargs):
+def create_or_update_profile(strategy, backend, uid, response, details, user,  *args, **kwargs):
     if backend.name == 'facebook':
         social = user.social_auth.get(provider='facebook')
 
@@ -12,6 +12,7 @@ def save_profile(strategy, backend, uid, response, details, user,  *args, **kwar
 
         profile.picture = social.extra_data['picture']['data']['url']
         profile.token = social.extra_data['access_token']
+        profile.facebook_user_id = social.extra_data['id']
         profile.save()
 
 
